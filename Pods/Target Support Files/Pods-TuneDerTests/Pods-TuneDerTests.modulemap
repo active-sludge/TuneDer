@@ -1,0 +1,6 @@
+framework module Pods_TuneDerTests {
+  umbrella header "Pods-TuneDerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
