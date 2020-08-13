@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E49F24E42121006F7A07 /* AppDelegate.swift */; };
 		62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E4A124E42121006F7A07 /* SceneDelegate.swift */; };
-		62F5E4A424E42121006F7A07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E4A324E42121006F7A07 /* ViewController.swift */; };
 		62F5E4A724E42121006F7A07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F5E4A524E42121006F7A07 /* Main.storyboard */; };
 		62F5E4A924E42123006F7A07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62F5E4A824E42123006F7A07 /* Assets.xcassets */; };
 		62F5E4AC24E42123006F7A07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F5E4AA24E42123006F7A07 /* LaunchScreen.storyboard */; };
 		62F5E4B724E42123006F7A07 /* TuneDerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E4B624E42123006F7A07 /* TuneDerTests.swift */; };
 		62F5E4C224E42123006F7A07 /* TuneDerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E4C124E42123006F7A07 /* TuneDerUITests.swift */; };
+		62F91D6A24E50DB000459C29 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F91D6924E50DB000459C29 /* CollectionViewController.swift */; };
+		62F91D6C24E5102500459C29 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F91D6B24E5102500459C29 /* CollectionViewCell.swift */; };
 		A3E7641339FD696BF9646303 /* Pods_TuneDer_TuneDerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528B5160C8A36A152A7C8B98 /* Pods_TuneDer_TuneDerUITests.framework */; };
 		BAED0C5F529BB611AADA0E1E /* Pods_TuneDerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51257F17261B2771F24216BF /* Pods_TuneDerTests.framework */; };
 		BFEAB1A4116D2EE3DBAB86C4 /* Pods_TuneDer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5483CAC1D6BB13A6852F44 /* Pods_TuneDer.framework */; };
@@ -49,7 +50,6 @@
 		62F5E49C24E42121006F7A07 /* TuneDer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuneDer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F5E49F24E42121006F7A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62F5E4A124E42121006F7A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		62F5E4A324E42121006F7A07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62F5E4A624E42121006F7A07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62F5E4A824E42123006F7A07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62F5E4AB24E42123006F7A07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		62F5E4BD24E42123006F7A07 /* TuneDerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuneDerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F5E4C124E42123006F7A07 /* TuneDerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneDerUITests.swift; sourceTree = "<group>"; };
 		62F5E4C324E42123006F7A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62F91D6924E50DB000459C29 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		62F91D6B24E5102500459C29 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8A0BAACDC2F84BADFA6AF527 /* Pods-TuneDer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuneDer.release.xcconfig"; path = "Target Support Files/Pods-TuneDer/Pods-TuneDer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,11 +120,12 @@
 			children = (
 				62F5E49F24E42121006F7A07 /* AppDelegate.swift */,
 				62F5E4A124E42121006F7A07 /* SceneDelegate.swift */,
-				62F5E4A324E42121006F7A07 /* ViewController.swift */,
 				62F5E4A524E42121006F7A07 /* Main.storyboard */,
 				62F5E4A824E42123006F7A07 /* Assets.xcassets */,
 				62F5E4AA24E42123006F7A07 /* LaunchScreen.storyboard */,
 				62F5E4AD24E42123006F7A07 /* Info.plist */,
+				62F91D6924E50DB000459C29 /* CollectionViewController.swift */,
+				62F91D6B24E5102500459C29 /* CollectionViewCell.swift */,
 			);
 			path = TuneDer;
 			sourceTree = "<group>";
@@ -155,7 +158,6 @@
 				17D06D0FFCF2CACB31BBF8C3 /* Pods-TuneDerTests.debug.xcconfig */,
 				37CA52E3659ED69C8B6DADAA /* Pods-TuneDerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -408,8 +410,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62F5E4A424E42121006F7A07 /* ViewController.swift in Sources */,
+				62F91D6A24E50DB000459C29 /* CollectionViewController.swift in Sources */,
 				62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */,
+				62F91D6C24E5102500459C29 /* CollectionViewCell.swift in Sources */,
 				62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
