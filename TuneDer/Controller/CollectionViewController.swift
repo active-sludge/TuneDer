@@ -12,8 +12,12 @@ class CollectionViewController: UICollectionViewController {
 
     let dataSource: [String] = ["Artist0", "Artist1", "Artist2", "Artist3", "Artist4", "Artist5", "Artist6" ]
     
+    var resultManager = ResultManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultManager.fetchResult()
 
     }
     

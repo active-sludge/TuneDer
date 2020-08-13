@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		628337FB24E565AE00F24116 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FA24E565AE00F24116 /* ResultModel.swift */; };
+		628337FD24E56DAF00F24116 /* ResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FC24E56DAF00F24116 /* ResultManager.swift */; };
+		628337FF24E570CA00F24116 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FE24E570CA00F24116 /* ResultData.swift */; };
 		62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E49F24E42121006F7A07 /* AppDelegate.swift */; };
 		62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E4A124E42121006F7A07 /* SceneDelegate.swift */; };
 		62F5E4A724E42121006F7A07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F5E4A524E42121006F7A07 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		51257F17261B2771F24216BF /* Pods_TuneDerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B5160C8A36A152A7C8B98 /* Pods_TuneDer_TuneDerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDer_TuneDerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D00A56251E3A565A2666FAF /* Pods-TuneDer-TuneDerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuneDer-TuneDerUITests.release.xcconfig"; path = "Target Support Files/Pods-TuneDer-TuneDerUITests/Pods-TuneDer-TuneDerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		628337FA24E565AE00F24116 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		628337FC24E56DAF00F24116 /* ResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultManager.swift; sourceTree = "<group>"; };
+		628337FE24E570CA00F24116 /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		62F5E49C24E42121006F7A07 /* TuneDer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuneDer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F5E49F24E42121006F7A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62F5E4A124E42121006F7A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		628337F624E5655B00F24116 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62F5E4A524E42121006F7A07 /* Main.storyboard */,
+				62F5E4AA24E42123006F7A07 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		628337F724E5656600F24116 /* SuportingDocuments */ = {
+			isa = PBXGroup;
+			children = (
+				62F5E49F24E42121006F7A07 /* AppDelegate.swift */,
+				62F5E4A124E42121006F7A07 /* SceneDelegate.swift */,
+			);
+			path = SuportingDocuments;
+			sourceTree = "<group>";
+		};
+		628337F824E5657D00F24116 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				62F91D6924E50DB000459C29 /* CollectionViewController.swift */,
+				62F91D6B24E5102500459C29 /* CollectionViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		628337F924E5658700F24116 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				628337FC24E56DAF00F24116 /* ResultManager.swift */,
+				628337FA24E565AE00F24116 /* ResultModel.swift */,
+				628337FE24E570CA00F24116 /* ResultData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		62F5E49324E42121006F7A07 = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +161,12 @@
 		62F5E49E24E42121006F7A07 /* TuneDer */ = {
 			isa = PBXGroup;
 			children = (
-				62F5E49F24E42121006F7A07 /* AppDelegate.swift */,
-				62F5E4A124E42121006F7A07 /* SceneDelegate.swift */,
-				62F5E4A524E42121006F7A07 /* Main.storyboard */,
+				628337F924E5658700F24116 /* Model */,
+				628337F824E5657D00F24116 /* Controller */,
+				628337F624E5655B00F24116 /* View */,
+				628337F724E5656600F24116 /* SuportingDocuments */,
 				62F5E4A824E42123006F7A07 /* Assets.xcassets */,
-				62F5E4AA24E42123006F7A07 /* LaunchScreen.storyboard */,
 				62F5E4AD24E42123006F7A07 /* Info.plist */,
-				62F91D6924E50DB000459C29 /* CollectionViewController.swift */,
-				62F91D6B24E5102500459C29 /* CollectionViewCell.swift */,
 			);
 			path = TuneDer;
 			sourceTree = "<group>";
@@ -412,7 +453,10 @@
 			files = (
 				62F91D6A24E50DB000459C29 /* CollectionViewController.swift in Sources */,
 				62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */,
+				628337FD24E56DAF00F24116 /* ResultManager.swift in Sources */,
 				62F91D6C24E5102500459C29 /* CollectionViewCell.swift in Sources */,
+				628337FF24E570CA00F24116 /* ResultData.swift in Sources */,
+				628337FB24E565AE00F24116 /* ResultModel.swift in Sources */,
 				62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

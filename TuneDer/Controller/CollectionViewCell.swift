@@ -14,7 +14,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var mediaLabel: UILabel!
     
     func configure(with dataName: String){
-        print(dataName)
         mediaLabel.text = dataName
     }
     
