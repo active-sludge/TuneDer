@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		628337FB24E565AE00F24116 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FA24E565AE00F24116 /* ResultModel.swift */; };
 		628337FD24E56DAF00F24116 /* ResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FC24E56DAF00F24116 /* ResultManager.swift */; };
 		628337FF24E570CA00F24116 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FE24E570CA00F24116 /* ResultData.swift */; };
 		62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E49F24E42121006F7A07 /* AppDelegate.swift */; };
@@ -50,7 +49,6 @@
 		51257F17261B2771F24216BF /* Pods_TuneDerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B5160C8A36A152A7C8B98 /* Pods_TuneDer_TuneDerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDer_TuneDerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D00A56251E3A565A2666FAF /* Pods-TuneDer-TuneDerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuneDer-TuneDerUITests.release.xcconfig"; path = "Target Support Files/Pods-TuneDer-TuneDerUITests/Pods-TuneDer-TuneDerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		628337FA24E565AE00F24116 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		628337FC24E56DAF00F24116 /* ResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultManager.swift; sourceTree = "<group>"; };
 		628337FE24E570CA00F24116 /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		62F5E49C24E42121006F7A07 /* TuneDer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuneDer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				628337FC24E56DAF00F24116 /* ResultManager.swift */,
-				628337FA24E565AE00F24116 /* ResultModel.swift */,
 				628337FE24E570CA00F24116 /* ResultData.swift */,
 			);
 			path = Model;
@@ -456,7 +453,6 @@
 				628337FD24E56DAF00F24116 /* ResultManager.swift in Sources */,
 				62F91D6C24E5102500459C29 /* CollectionViewCell.swift in Sources */,
 				628337FF24E570CA00F24116 /* ResultData.swift in Sources */,
-				628337FB24E565AE00F24116 /* ResultModel.swift in Sources */,
 				62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

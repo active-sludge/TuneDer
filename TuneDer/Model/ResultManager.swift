@@ -11,27 +11,48 @@ import Alamofire
 
 struct ResultManager {
     
-    let url = URL(string: "https://itunes.apple.com/search?term=jack+johnson")
-    
     func fetchResult() {
         
-        URLSession.shared.dataTask(with: url!) {(data, response, error) in
-            
-            do {
-                let resultData = try JSONDecoder().decode(ResultData.self, from: data!)
-                
-                print(resultData.resultCount)
-                print(resultData.results[0].artistID)
-                print(resultData.results[0].artistName)
-                print(resultData.results[0].trackName)
-                print(resultData.results[0].trackPrice)
-                
-            } catch  {
-                print("There was an error")
-            }
-            
-        }.resume()
+        //        let apiString = "https://itunes.apple.com"
+        //        let endPointString = "/search?"
+        //        let queryString = "term=jack+johnson"
         
+        let apiString = "https://reqres.in/api"
+        let endPointString = "users?"
+        let queryString = "page=2"
+        let urlString = apiString + endPointString + queryString
+        
+        let url = URL(string: urlString)
+        
+        guard url != nil else {
+            return
+        }
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: url!) { (data, response, error) in
+            
+            
+            if error == nil && data != nil {
+                
+                let decoder = JSONDecoder()
+                
+                do {
+                    let resultData = try decoder.decode(ResultData.self, from: data!)
+                    
+                    print(resultData)
+                    print(resultData.resultCount!)
+                    print(resultData.results![0].artistID!)
+                    print(resultData.results![0].artistName!)
+                    print(resultData.results![0].trackName!)
+                    print(resultData.results![0].trackPrice!)
+                    
+                } catch {
+                    print("There was an error")
+                }
+            }
+        }
+        
+        dataTask.resume()
         
     }
 }
