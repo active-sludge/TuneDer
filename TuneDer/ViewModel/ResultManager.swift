@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultViewModel {
+class ResultManager {
     
     func fetchData()  {
         
@@ -34,9 +34,14 @@ class ResultViewModel {
                     do {
                         
                         let resultData = try decoder.decode(ResultData.self, from: data!)
+                        var mediaArray: [Media] = []
                         
-                        print(resultData)
-                        print(resultData.resultCount)
+                        for index in 0...resultData.resultCount-1 {
+                            let media = Media(trackName: resultData.results[index].trackName, artistName: resultData.results[index].artistName)
+                            mediaArray.append(media)
+                        }
+                        
+                        print(mediaArray)
                         
                     } catch {
                         print("There was an error")

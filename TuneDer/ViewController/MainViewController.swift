@@ -9,6 +9,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var resultManager = ResultManager()
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,6 +21,7 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
      
         self.collectionView!.register(UINib(nibName: "MediaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainMediaCell")
+        
        
     }
     
@@ -55,7 +58,4 @@ extension MainViewController: UICollectionViewDataSource{
         
         return cell
     }
-    
-    
-    
 }
