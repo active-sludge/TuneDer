@@ -8,6 +8,7 @@ target 'TuneDer' do
   # Pods for TuneDer
 
 pod 'Alamofire', '~> 5.2'
+pod 'RealmSwift'
 
   target 'TuneDerTests' do
     inherit! :search_paths
