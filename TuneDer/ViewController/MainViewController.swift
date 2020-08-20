@@ -9,53 +9,77 @@
 import UIKit
 
 class MainViewController: UIViewController {
+ 
+    let urlString = "https://itunes.apple.com/search?term=jack+johnson"
+    static let segueIdentifier = "goDetailViewController"
+    var searchResult: SearchResult!
     
-    var resultManager = ResultManager()
-
     @IBOutlet weak var collectionView: UICollectionView!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ResultManager.shared.delegate = self
+        ResultManager.shared.fetchThenStoreData(fromURL: urlString)
+        
+        self.collectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
 
         collectionView.delegate = self
         collectionView.dataSource = self
-     
-        self.collectionView!.register(UINib(nibName: "MediaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainMediaCell")
         
-       
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+//MARK: - UICollectionViewDelegate
 
 extension MainViewController: UICollectionViewDelegate{
     
-    
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Tapped")
+    }
     
 }
 
+
+//MARK: - UICollectionViewDataSource
+
 extension MainViewController: UICollectionViewDataSource{
+     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 50
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainMediaCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaCollectionViewCell.identifier, for: indexPath) as! MediaCollectionViewCell
         
-        
+        if searchResult != nil {
+            DispatchQueue.main.async {
+                cell.artistName.text = self.searchResult.mediaResults[indexPath.row].artistName
+                cell.trackName.text = self.searchResult.mediaResults[indexPath.row].trackName
+            }
+        }
         return cell
     }
 }
+
+//MARK: - UICollectionViewDelegateFlowLayout
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width/1.1, height: 120)
+    }
+
+}
+
+//MARK: - MainViewController: ResultManagerProtocol
+
+extension MainViewController: ResultManagerProtocol{
+    func fetchResult(result: SearchResult) {
+        DispatchQueue.main.async {
+            self.searchResult = result
+            self.collectionView.reloadData()
+        }
+    }
+}
+

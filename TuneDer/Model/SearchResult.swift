@@ -9,6 +9,13 @@
 import Foundation
 
 struct SearchResult {
-    let searchTerm: String
-    let searchResults: [Media]
+    let resultCount: Int
+    let mediaResults: [Media]
+
+}
+
+struct Media {
+    var trackName: String
+    var artistName: String
+
 }
