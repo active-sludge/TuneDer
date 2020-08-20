@@ -12,6 +12,7 @@ class MediaCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MainMediaCell"
     
+    @IBOutlet weak var backView: MediaCollectionViewCell!
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
@@ -22,6 +23,7 @@ class MediaCollectionViewCell: UICollectionViewCell {
             self.setupCell()
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,6 +31,7 @@ class MediaCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(){
+        
         
         
         
