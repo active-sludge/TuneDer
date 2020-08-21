@@ -12,13 +12,12 @@ class MediaCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MainMediaCell"
     
-    @IBOutlet weak var backView: MediaCollectionViewCell!
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     
     
-    var app: ResultModel! {
+    var app: Media! {
         didSet{
             self.setupCell()
         }
@@ -27,20 +26,18 @@ class MediaCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        backgroundColor = .cyan
+        thumbnail.backgroundColor = .black
+        thumbnail.tintColor = .yellow
+        
+        trackName.textAlignment = .right
+        
+        artistName.textAlignment = .right
         
     }
     
     func setupCell(){
-        
-        
-        
-        
-        
-    }
-    
-  
-    
-    static func nib() -> UINib {
-        return UINib(nibName: "MediaCollectionViewCell", bundle: nil)
+        artistName.text = app.artistName
+        trackName.text = app.trackName
     }
 }

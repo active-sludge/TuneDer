@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6262720624EBB14C009EDB7B /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6262720524EBB14C009EDB7B /* ColumnFlowLayout.swift */; };
+		6272A70624EE9F9500705B7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272A70524EE9F9500705B7E /* DetailViewController.swift */; };
 		627A001224EAA3C1001C1BC8 /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627A001124EAA3C1001C1BC8 /* MediaCollectionViewCell.swift */; };
 		628337FF24E570CA00F24116 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FE24E570CA00F24116 /* ResultModel.swift */; };
 		629A911424E6CDF20018C327 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629A911324E6CDF20018C327 /* SearchResult.swift */; };
@@ -52,7 +52,7 @@
 		51257F17261B2771F24216BF /* Pods_TuneDerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B5160C8A36A152A7C8B98 /* Pods_TuneDer_TuneDerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDer_TuneDerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D00A56251E3A565A2666FAF /* Pods-TuneDer-TuneDerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuneDer-TuneDerUITests.release.xcconfig"; path = "Target Support Files/Pods-TuneDer-TuneDerUITests/Pods-TuneDer-TuneDerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6262720524EBB14C009EDB7B /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		6272A70524EE9F9500705B7E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		627A001124EAA3C1001C1BC8 /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		628337FE24E570CA00F24116 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		629A911324E6CDF20018C327 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -111,14 +111,6 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
-		6262720424EBB12F009EDB7B /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				6262720524EBB14C009EDB7B /* ColumnFlowLayout.swift */,
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
 		6262720724EBB5D5009EDB7B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				629A912024E6DF8A0018C327 /* MainViewController.swift */,
+				6272A70524EE9F9500705B7E /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -190,7 +183,6 @@
 			children = (
 				6226CA5024EBE9C200BCA9A1 /* Service */,
 				6262720724EBB5D5009EDB7B /* Cells */,
-				6262720424EBB12F009EDB7B /* Layouts */,
 				62A3FE0C24EA5C3C0006C94D /* Views */,
 				628337F924E5658700F24116 /* Model */,
 				628337F624E5655B00F24116 /* ViewController */,
@@ -482,12 +474,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6272A70624EE9F9500705B7E /* DetailViewController.swift in Sources */,
 				62F91D6A24E50DB000459C29 /* ResultManager.swift in Sources */,
 				627A001224EAA3C1001C1BC8 /* MediaCollectionViewCell.swift in Sources */,
 				629A912124E6DF8A0018C327 /* MainViewController.swift in Sources */,
 				629A911424E6CDF20018C327 /* SearchResult.swift in Sources */,
 				62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */,
-				6262720624EBB14C009EDB7B /* ColumnFlowLayout.swift in Sources */,
 				628337FF24E570CA00F24116 /* ResultModel.swift in Sources */,
 				62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */,
 			);
