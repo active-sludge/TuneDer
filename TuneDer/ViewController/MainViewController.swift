@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     
     let urlString = "https://itunes.apple.com/search?term=jack+johnson"
     static let segueIdentifier = "goDetailViewController"
-    var searchResult = SearchResult(resultCount: 0, mediaResults: [Media]())
+    var searchResult = [Media]()
     
     @IBOutlet weak var cView: UICollectionView!
     
@@ -59,14 +59,14 @@ extension MainViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.searchResult.mediaResults.count
+        return self.searchResult.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaCollectionViewCell.identifier, for: indexPath) as! MediaCollectionViewCell
         
         
-        cell.artistName.text = self.searchResult.mediaResults[indexPath.row].artistName
-        cell.trackName.text = self.searchResult.mediaResults[indexPath.row].trackName
+        cell.artistName.text = self.searchResult[indexPath.row].artistName
+        cell.trackName.text = self.searchResult[indexPath.row].trackName
         
         return cell
     }
@@ -100,7 +100,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainViewController: ResultManagerProtocol{
     func fetchResult(result: SearchResult) {
-        self.searchResult = result
+        self.searchResult = result.mediaResults
         DispatchQueue.main.sync {
             self.cView.reloadData()
         }
