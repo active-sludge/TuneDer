@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
 
 class MainViewController: UIViewController {
     
     let urlString = "https://itunes.apple.com/search?term=jack+johnson"
     static let segueIdentifier = "goDetailViewController"
-    var searchResult = [Media]()
+    var mediaResults = [Media]()
     
     @IBOutlet weak var cView: UICollectionView!
     
@@ -59,14 +61,15 @@ extension MainViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.searchResult.count
+        return self.mediaResults.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaCollectionViewCell.identifier, for: indexPath) as! MediaCollectionViewCell
         
+        cell.artistName.text = self.mediaResults[indexPath.row].artistName
+        cell.trackName.text = self.mediaResults[indexPath.row].trackName
+        cell.thumbnail.af.setImage(withURL: URL(string: self.mediaResults[indexPath.row].artworkUrl100)!)
         
-        cell.artistName.text = self.searchResult[indexPath.row].artistName
-        cell.trackName.text = self.searchResult[indexPath.row].trackName
         
         return cell
     }
@@ -99,8 +102,8 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - MainViewController: ResultManagerProtocol
 
 extension MainViewController: ResultManagerProtocol{
-    func fetchResult(result: SearchResult) {
-        self.searchResult = result.mediaResults
+    func fetchResult(result: [Media]) {
+        self.mediaResults = result
         DispatchQueue.main.sync {
             self.cView.reloadData()
         }

@@ -20,6 +20,7 @@ struct ResultModel: Codable {
         var trackId: Int64
         var artistName: String!
         var trackName: String!
+        var artworkUrl100: String
     }
 }
 

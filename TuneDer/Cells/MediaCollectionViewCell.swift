@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class MediaCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MainMediaCell"
+
     
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
-    
     
     var app: Media! {
         didSet{
@@ -39,5 +41,7 @@ class MediaCollectionViewCell: UICollectionViewCell {
     func setupCell(){
         artistName.text = app.artistName
         trackName.text = app.trackName
+        print(app.artworkUrl100)
+        thumbnail.af.setImage(withURL: URL(string: app.artworkUrl100)!)
     }
 }
