@@ -14,16 +14,6 @@ struct DatabaseManager {
     func save(toDatabase medias: List<Media>) {
        
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        do {
-            let realm = try! Realm()
-            try realm.write {
-                realm.add(medias)
-            }
-        } catch {
-            print(error)
-        }
-        
     
     }
 }
