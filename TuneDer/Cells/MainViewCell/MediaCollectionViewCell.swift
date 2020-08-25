@@ -41,7 +41,6 @@ class MediaCollectionViewCell: UICollectionViewCell {
     func setupCell(){
         artistName.text = app.artistName
         trackName.text = app.trackName
-        print(app.artworkUrl100)
         thumbnail.af.setImage(withURL: URL(string: app.artworkUrl100)!)
     }
 }

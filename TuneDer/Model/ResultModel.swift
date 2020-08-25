@@ -18,8 +18,8 @@ struct ResultModel: Codable {
 
         var artistId: Int64
         var trackId: Int64
-        var artistName: String!
-        var trackName: String!
+        var artistName: String
+        var trackName: String
         var artworkUrl100: String
     }
 }

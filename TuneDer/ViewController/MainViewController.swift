@@ -77,7 +77,6 @@ extension MainViewController: UICollectionViewDataSource{
         cell.trackName.text = self.mediaResults[indexPath.row].trackName
         cell.thumbnail.af.setImage(withURL: URL(string: self.mediaResults[indexPath.row].artworkUrl100)!)
         
-        
         return cell
     }
 }
@@ -112,7 +111,7 @@ extension MainViewController: ResultManagerProtocol{
     func fetchResult(result: [Media]) {
         self.mediaResults = result
         
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             self.cView.reloadData()
         }
     }

@@ -10,19 +10,16 @@ import Foundation
 import RealmSwift
 
 struct DatabaseManager {
-    
+    let realm = try! Realm()
     func save(toDatabase media: Media) {
-       
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(media)
+        DispatchQueue.main.async {
+            do {
+                try self.realm.write {
+                    self.realm.add(media)
+                }
+            } catch {
+                print(error)
             }
-        } catch {
-            print(error)
         }
-    
     }
 }

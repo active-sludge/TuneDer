@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6270078724F55643007B1644 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270078624F55643007B1644 /* DetailModel.swift */; };
 		6272A70624EE9F9500705B7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272A70524EE9F9500705B7E /* DetailViewController.swift */; };
 		627A001224EAA3C1001C1BC8 /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627A001124EAA3C1001C1BC8 /* MediaCollectionViewCell.swift */; };
 		628337FF24E570CA00F24116 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628337FE24E570CA00F24116 /* ResultModel.swift */; };
@@ -53,6 +54,7 @@
 		51257F17261B2771F24216BF /* Pods_TuneDerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B5160C8A36A152A7C8B98 /* Pods_TuneDer_TuneDerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuneDer_TuneDerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D00A56251E3A565A2666FAF /* Pods-TuneDer-TuneDerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuneDer-TuneDerUITests.release.xcconfig"; path = "Target Support Files/Pods-TuneDer-TuneDerUITests/Pods-TuneDer-TuneDerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6270078624F55643007B1644 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		6272A70524EE9F9500705B7E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		627A001124EAA3C1001C1BC8 /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		628337FE24E570CA00F24116 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				628337FE24E570CA00F24116 /* ResultModel.swift */,
 				629A911324E6CDF20018C327 /* Media.swift */,
+				6270078624F55643007B1644 /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				629A912124E6DF8A0018C327 /* MainViewController.swift in Sources */,
 				629A911424E6CDF20018C327 /* Media.swift in Sources */,
 				62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */,
+				6270078724F55643007B1644 /* DetailModel.swift in Sources */,
 				628337FF24E570CA00F24116 /* ResultModel.swift in Sources */,
 				62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */,
 				62ED533724F0058100CD67FD /* DatabaseManager.swift in Sources */,

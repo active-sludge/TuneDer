@@ -24,32 +24,48 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B230180A-1031-4037-A1C5-39390A5256C2"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TuneDer/ViewController/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "fetchResult(result:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9E0B6426-8553-41C4-AFD7-2955AE7564AF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TuneDer/ViewController/MainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "fetchResult(result:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B230180A-1031-4037-A1C5-39390A5256C2 - ac2e6e3a34e0efb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TuneDer.MainViewController.fetchResult(result: Swift.Array&lt;TuneDer.Media&gt;) -&gt; ()"
+                  moduleName = "TuneDer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huseyincandayan/Desktop/Playground/TuneDer/TuneDer/ViewController/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "227">
+               </Location>
+               <Location
+                  uuid = "B230180A-1031-4037-A1C5-39390A5256C2 - f8f4017e4d5572fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in TuneDer.MainViewController.fetchResult(result: Swift.Array&lt;TuneDer.Media&gt;) -&gt; ()"
+                  moduleName = "TuneDer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huseyincandayan/Desktop/Playground/TuneDer/TuneDer/ViewController/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -71,49 +87,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C401904E-59A6-440E-B938-85569A4AD750"
+            uuid = "7D5C6471-3FE7-4C2B-B17C-D6598CFB229F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TuneDer/DatabaseManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "save(toDatabase:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB2E7645-0E22-47BF-87E8-687B7B45DD15"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TuneDer/ViewController/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1898DCB-A409-48B4-B6C7-14F095ED6E74"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TuneDer/ResultManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "fetchThenStoreData(fromURL:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C401904E-59A6-440E-B938-85569A4AD750 - fdcb02ccd26399e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TuneDer.ResultManager.fetchThenStoreData(fromURL: Swift.String) -&gt; ()"
-                  moduleName = "TuneDer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huseyincandayan/Desktop/Playground/TuneDer/TuneDer/ResultManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "2977">
-               </Location>
-               <Location
-                  uuid = "C401904E-59A6-440E-B938-85569A4AD750 - 24424bfd5ec84f6a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TuneDer.ResultManager.fetchThenStoreData(fromURL: Swift.String) -&gt; ()"
-                  moduleName = "TuneDer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huseyincandayan/Desktop/Playground/TuneDer/TuneDer/ResultManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

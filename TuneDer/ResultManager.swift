@@ -40,12 +40,10 @@ class ResultManager {
                                 media.trackName = decodedData.results[index].trackName
                                 media.artworkUrl100 = decodedData.results[index].artworkUrl100
                                 
-                                
+                                self.databaseManager.save(toDatabase: media)
                                 mediaResults.append(media)
                             }
-                            
-                            print(mediaResults)
-                            
+                            print(Realm.Configuration.defaultConfiguration.fileURL!)
                             
                             self.delegate.fetchResult(result: mediaResults)
                             
@@ -53,7 +51,6 @@ class ResultManager {
                             print(error)
                         }
                     }
-                    
                 }
             }
             dataTask.resume()
