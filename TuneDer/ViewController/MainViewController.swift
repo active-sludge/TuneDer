@@ -31,12 +31,19 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == MainViewController.segueIdentifier {
-            
+        
+        if let cell = sender as? UICollectionViewCell,
+            let indexPath = self.cView.indexPath(for: cell) {
+         
+            if segue.identifier == MainViewController.segueIdentifier {
+                let destinationVC = segue.destination as! DetailViewController
+                
+                destinationVC.albumCover.af.setImage(withURL: URL(string: self.mediaResults[indexPath.row].artworkUrl100)!)
+                destinationVC.artistName.text = mediaResults[indexPath.row].artistName
+                destinationVC.trackName.text = mediaResults[indexPath.row].trackName
+            }
         }
     }
-    
-    
 }
 
 //MARK: - UICollectionViewDelegate
@@ -45,7 +52,7 @@ extension MainViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Tapped")
-        
+        performSegue(withIdentifier: MainViewController.segueIdentifier, sender: nil)
         
     }
     
@@ -104,6 +111,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: ResultManagerProtocol{
     func fetchResult(result: [Media]) {
         self.mediaResults = result
+        
         DispatchQueue.main.sync {
             self.cView.reloadData()
         }

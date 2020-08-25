@@ -39,11 +39,60 @@
                     <navigationItem key="navigationItem" title="TuneDer" id="JFE-rZ-kUt"/>
                     <connections>
                         <outlet property="cView" destination="Jo3-Qu-HEm" id="Lah-UD-B8U"/>
+                        <segue destination="SFl-bx-vap" kind="show" identifier="goDetailViewController" id="V2J-X3-ZUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYv-SR-wpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053.6231884057972" y="-418.52678571428572"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="75m-0K-Qr6">
+            <objects>
+                <viewController id="SFl-bx-vap" customClass="DetailViewController" customModule="TuneDer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OhC-wV-mTg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QRX-Zk-AiB">
+                                <rect key="frame" x="57" y="108" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="D0f-SD-gE4"/>
+                                    <constraint firstAttribute="height" constant="300" id="xDu-O5-Ml4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKl-es-x4b">
+                                <rect key="frame" x="57" y="438" width="300" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5j-ZP-ynn">
+                                <rect key="frame" x="57" y="495" width="300" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QRX-Zk-AiB" firstAttribute="top" secondItem="H7n-nd-2E7" secondAttribute="top" constant="20" id="aZh-Mi-BJ2"/>
+                            <constraint firstItem="QRX-Zk-AiB" firstAttribute="centerX" secondItem="OhC-wV-mTg" secondAttribute="centerX" id="jJr-Rx-8rg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H7n-nd-2E7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qTT-Zk-aHw"/>
+                    <connections>
+                        <outlet property="albumCover" destination="QRX-Zk-AiB" id="kr5-lG-PFp"/>
+                        <outlet property="artistName" destination="r5j-ZP-ynn" id="W7L-Rs-jHX"/>
+                        <outlet property="trackName" destination="qKl-es-x4b" id="F4n-yD-aBW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-95-91k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953.6231884057972" y="-419.19642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qFw-ZT-ePk">

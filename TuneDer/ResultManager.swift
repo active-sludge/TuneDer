@@ -18,11 +18,8 @@ class ResultManager {
     static var shared = ResultManager()
     let databaseManager = DatabaseManager()
     
-    
     var delegate : ResultManagerProtocol!
     func fetchThenStoreData(fromURL urlString: String) {
-    
-        
         
         if let url = URL(string: urlString){
             
@@ -42,20 +39,21 @@ class ResultManager {
                                 media.artistName = decodedData.results[index].artistName
                                 media.trackName = decodedData.results[index].trackName
                                 media.artworkUrl100 = decodedData.results[index].artworkUrl100
-                            
+                                
+                                
                                 mediaResults.append(media)
                             }
                             
                             print(mediaResults)
                             
-//                            self.databaseManager.save(toDatabase: mediaList)
+                            
                             self.delegate.fetchResult(result: mediaResults)
                             
                         } catch let error {
                             print(error)
                         }
                     }
-
+                    
                 }
             }
             dataTask.resume()

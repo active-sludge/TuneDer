@@ -10,7 +10,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var albumCover: UIImageView!
+    @IBOutlet weak var trackName: UILabel!
+    @IBOutlet weak var artistName: UILabel!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+    }
     
 }
