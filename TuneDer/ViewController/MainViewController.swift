@@ -32,17 +32,13 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let cell = sender as? UICollectionViewCell,
-            let indexPath = self.cView.indexPath(for: cell) {
-         
             if segue.identifier == MainViewController.segueIdentifier {
+
                 let destinationVC = segue.destination as! DetailViewController
                 
-                destinationVC.albumCover.af.setImage(withURL: URL(string: self.mediaResults[indexPath.row].artworkUrl100)!)
-                destinationVC.artistName.text = mediaResults[indexPath.row].artistName
-                destinationVC.trackName.text = mediaResults[indexPath.row].trackName
+                destinationVC.data = sender as! DetailModel
+                
             }
-        }
     }
 }
 
@@ -52,7 +48,13 @@ extension MainViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Tapped")
-        performSegue(withIdentifier: MainViewController.segueIdentifier, sender: nil)
+        
+        let detailViewData = DetailModel(
+            trackName: mediaResults[indexPath.row].artistName,
+            artistName: mediaResults[indexPath.row].trackName,
+            thumbnailURLString: mediaResults[indexPath.row].artworkUrl100)
+        
+        performSegue(withIdentifier: MainViewController.segueIdentifier, sender: detailViewData)
         
     }
     

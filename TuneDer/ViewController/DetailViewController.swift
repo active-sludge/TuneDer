@@ -14,11 +14,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
    
+    var data = DetailModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        albumCover.af.setImage(withURL: URL(string: data.thumbnailURLString)!)
+        artistName.text = data.artistName
+        trackName.text = data.trackName
         
     }
 

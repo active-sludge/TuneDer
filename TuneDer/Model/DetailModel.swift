@@ -6,10 +6,17 @@
 //  Copyright © 2020 Huseyin Can Dayan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct DetailView {
+struct DetailModel {
     
-    
-    
+    var trackName: String = ""
+    var artistName: String = ""
+    var thumbnailURLString: String = ""
+//    
+//    init(trackName: String, artistName: String, thumbnailURLString: String) {
+//        self.trackName = trackName
+//        self.artistName = artistName
+//        self.thumbnailURLString = thumbnailURLString
+//    }
 }
