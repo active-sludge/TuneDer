@@ -14,6 +14,9 @@ class MainViewController: UIViewController {
     
     let urlString = "https://itunes.apple.com/search?term=jack+johnson"
     static let segueIdentifier = "goDetailViewController"
+    
+    let databaseManager = DatabaseManager()
+    
     var mediaResults = [Media]()
     
     @IBOutlet weak var cView: UICollectionView!
@@ -21,8 +24,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ResultManager.shared.delegate = self
-        ResultManager.shared.fetchThenStoreData(fromURL: urlString)
+        ResultManager.shared.resultManagerDelegate = self
+        
+        if databaseManager.realm.isEmpty {
+            
+            ResultManager.shared.fetchThenStoreData(fromURL: urlString)
+        } else {
+            mediaResults = databaseManager.retrieveAsArray()
+        }
         
         cView.delegate = self
         cView.dataSource = self
@@ -32,13 +41,13 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-            if segue.identifier == MainViewController.segueIdentifier {
-
-                let destinationVC = segue.destination as! DetailViewController
-                
-                destinationVC.data = sender as! DetailModel
-                
-            }
+        if segue.identifier == MainViewController.segueIdentifier {
+            
+            let destinationVC = segue.destination as! DetailViewController
+            
+            destinationVC.data = sender as! DetailModel
+            
+        }
     }
 }
 
@@ -47,7 +56,19 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Tapped")
+        
+        print("tapped")
+        
+        let realm = try! Realm()
+        try! realm.write{
+            if mediaResults[indexPath.row].isSelected == false {
+                mediaResults[indexPath.row].isSelected = true
+                cView.cellForItem(at: indexPath)?.backgroundColor = .darkGray
+            } else if mediaResults[indexPath.row].isSelected == true {
+                mediaResults[indexPath.row].isSelected = false
+                cView.cellForItem(at: indexPath)?.backgroundColor = .cyan
+            }
+        }
         
         let detailViewData = DetailModel(
             trackName: mediaResults[indexPath.row].artistName,
@@ -59,7 +80,11 @@ extension MainViewController: UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        print("highlight")
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    
     }
 }
 
@@ -72,12 +97,18 @@ extension MainViewController: UICollectionViewDataSource{
         
         return self.mediaResults.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaCollectionViewCell.identifier, for: indexPath) as! MediaCollectionViewCell
         
         cell.artistName.text = self.mediaResults[indexPath.row].artistName
         cell.trackName.text = self.mediaResults[indexPath.row].trackName
         cell.thumbnail.af.setImage(withURL: URL(string: self.mediaResults[indexPath.row].artworkUrl100)!)
+        if mediaResults[indexPath.row].isSelected == true {
+            cell.backgroundColor = .darkGray
+        } else {
+            cell.backgroundColor = .cyan
+        }
         
         return cell
     }
@@ -94,14 +125,14 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-//        let minColumnWidth: CGFloat = UIScreen.main.bounds.width - 20
+        //        let minColumnWidth: CGFloat = UIScreen.main.bounds.width - 20
         let minColumnWidth: CGFloat = 300.0
         let cellHeight: CGFloat = 140.0
         
         let availableWidth = collectionView.bounds.inset(by: collectionView.layoutMargins).width
         let maxNumColumns = Int(availableWidth / minColumnWidth)
         let cellWidth = (availableWidth / CGFloat(maxNumColumns)).rounded(.down)
-
+        
         return CGSize(width: cellWidth, height: cellHeight)
         
     }
@@ -110,13 +141,11 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - MainViewController: ResultManagerProtocol
 
 extension MainViewController: ResultManagerProtocol{
-    func fetchResult(result: [Media]) {
-        self.mediaResults = result
-        
+    func fetchResult() {
         DispatchQueue.main.async {
+            self.mediaResults = self.databaseManager.retrieveAsArray()
             self.cView.reloadData()
         }
     }
 }
-
 

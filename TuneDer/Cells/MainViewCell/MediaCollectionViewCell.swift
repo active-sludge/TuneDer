@@ -19,6 +19,7 @@ class MediaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     
+    
     var app: Media! {
         didSet{
             self.setupCell()

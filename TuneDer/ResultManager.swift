@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 protocol ResultManagerProtocol {
-    func fetchResult(result: [Media])
+    func fetchResult()
 }
 
 class ResultManager {
@@ -18,7 +18,8 @@ class ResultManager {
     static var shared = ResultManager()
     let databaseManager = DatabaseManager()
     
-    var delegate : ResultManagerProtocol!
+    var resultManagerDelegate : ResultManagerProtocol!
+    
     func fetchThenStoreData(fromURL urlString: String) {
         
         if let url = URL(string: urlString){
@@ -45,7 +46,7 @@ class ResultManager {
                             }
                             print(Realm.Configuration.defaultConfiguration.fileURL!)
                             
-                            self.delegate.fetchResult(result: mediaResults)
+                            self.resultManagerDelegate.fetchResult()
                             
                         } catch let error {
                             print(error)

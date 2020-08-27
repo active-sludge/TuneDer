@@ -10,7 +10,9 @@ import Foundation
 import RealmSwift
 
 struct DatabaseManager {
+    
     let realm = try! Realm()
+    
     func save(toDatabase media: Media) {
         DispatchQueue.main.async {
             do {
@@ -21,5 +23,13 @@ struct DatabaseManager {
                 print(error)
             }
         }
+    }
+    
+    func retrieveAsArray() -> [Media] {
+        let medias = realm.objects(Media.self)
+        
+        let mediaResults = Array(medias)
+        
+        return mediaResults
     }
 }

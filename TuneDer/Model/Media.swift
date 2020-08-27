@@ -13,4 +13,5 @@ class Media: Object {
     @objc dynamic var trackName: String = ""
     @objc dynamic var artistName: String = ""
     @objc dynamic var artworkUrl100: String = ""
+    @objc dynamic var isSelected: Bool = false
 }
