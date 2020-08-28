@@ -125,7 +125,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        //        let minColumnWidth: CGFloat = UIScreen.main.bounds.width - 20
         let minColumnWidth: CGFloat = 300.0
         let cellHeight: CGFloat = 140.0
         

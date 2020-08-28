@@ -15,6 +15,8 @@
 		629A912124E6DF8A0018C327 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629A912024E6DF8A0018C327 /* MainViewController.swift */; };
 		62A3FE1624EA5CB20006C94D /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62A3FE1424EA5CB20006C94D /* MediaCollectionViewCell.xib */; };
 		62A3FE1A24EA5D2B0006C94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62A3FE1924EA5D2B0006C94D /* Main.storyboard */; };
+		62B84D9824F9255000FB46F5 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B84D9624F9255000FB46F5 /* DetailViewCell.swift */; };
+		62B84D9C24F9391800FB46F5 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B84D9B24F9391800FB46F5 /* UIViewExtention.swift */; };
 		62ED533724F0058100CD67FD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED533624F0058100CD67FD /* DatabaseManager.swift */; };
 		62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E49F24E42121006F7A07 /* AppDelegate.swift */; };
 		62F5E4A224E42121006F7A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5E4A124E42121006F7A07 /* SceneDelegate.swift */; };
@@ -62,6 +64,8 @@
 		629A912024E6DF8A0018C327 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		62A3FE1424EA5CB20006C94D /* MediaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		62A3FE1924EA5D2B0006C94D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		62B84D9624F9255000FB46F5 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
+		62B84D9B24F9391800FB46F5 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		62ED533624F0058100CD67FD /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		62F5E49C24E42121006F7A07 /* TuneDer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuneDer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F5E49F24E42121006F7A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		6262720724EBB5D5009EDB7B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				62B84D9A24F9390500FB46F5 /* Extentions */,
+				62B84D9524F924F100FB46F5 /* DetailViewCell */,
 				62B695BA24F4EE6E001B51B1 /* MainViewCell */,
 			);
 			path = Cells;
@@ -168,6 +174,22 @@
 				627A001124EAA3C1001C1BC8 /* MediaCollectionViewCell.swift */,
 			);
 			path = MainViewCell;
+			sourceTree = "<group>";
+		};
+		62B84D9524F924F100FB46F5 /* DetailViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				62B84D9624F9255000FB46F5 /* DetailViewCell.swift */,
+			);
+			path = DetailViewCell;
+			sourceTree = "<group>";
+		};
+		62B84D9A24F9390500FB46F5 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				62B84D9B24F9391800FB46F5 /* UIViewExtention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		62F5E49324E42121006F7A07 = {
@@ -491,6 +513,8 @@
 				6272A70624EE9F9500705B7E /* DetailViewController.swift in Sources */,
 				62F91D6A24E50DB000459C29 /* ResultManager.swift in Sources */,
 				627A001224EAA3C1001C1BC8 /* MediaCollectionViewCell.swift in Sources */,
+				62B84D9C24F9391800FB46F5 /* UIViewExtention.swift in Sources */,
+				62B84D9824F9255000FB46F5 /* DetailViewCell.swift in Sources */,
 				629A912124E6DF8A0018C327 /* MainViewController.swift in Sources */,
 				629A911424E6CDF20018C327 /* Media.swift in Sources */,
 				62F5E4A024E42121006F7A07 /* AppDelegate.swift in Sources */,

@@ -10,19 +10,56 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var albumCover: UIImageView!
-    @IBOutlet weak var trackName: UILabel!
-    @IBOutlet weak var artistName: UILabel!
-   
     var data = DetailModel()
-    
+    var tableView = UITableView()
+    var safeArea: UILayoutGuide!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
         
-        albumCover.af.setImage(withURL: URL(string: data.thumbnailURLString)!)
-        artistName.text = data.artistName
-        trackName.text = data.trackName
-        
+        setupTableView()
     }
+    
+    func setupTableView() {
+        
+        print("setupTableView is loaded.")
+        print(data)
+        
+        view.backgroundColor = .white
+        safeArea = view.layoutMarginsGuide
+        
+        view.addSubview(tableView)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
+        tableView.rowHeight = safeArea.layoutFrame.size.height
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: DetailViewCell.identifier)
+    }
+}
 
+extension DetailViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailViewCell.identifier, for: indexPath)
+        
+        cell.textLabel?.text = data.artistName
+        cell.imageView?.af.setImage(withURL: URL(string: data.thumbnailURLString)!)
+        
+        return cell
+    }
+    
+    
 }

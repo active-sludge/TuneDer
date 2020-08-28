@@ -26,6 +26,7 @@ struct DatabaseManager {
     }
     
     func retrieveAsArray() -> [Media] {
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         let medias = realm.objects(Media.self)
         
         let mediaResults = Array(medias)

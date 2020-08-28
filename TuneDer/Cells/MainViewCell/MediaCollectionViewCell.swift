@@ -13,7 +13,6 @@ import AlamofireImage
 class MediaCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MainMediaCell"
-
     
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
